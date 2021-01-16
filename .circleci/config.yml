@@ -68,7 +68,7 @@ jobs:
       - *restore-cache
       - run:
           name: Run Prettier
-          command: npm run prettier --check
+          command: npm run prettier --write
 
   deploy-to-heroku:
     executor: app-executor
