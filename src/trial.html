@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script type="text/javascript">
+        const greeks = {
+            first: 'Tartarus',
+            titans: ['Kronos', 'Iapetus', 'Krios', 'Hyperion'],
+            gods: [
+                {name: 'Poseidon'},
+                {name: 'Hades'},
+                {name: 'Zeus'}
+            ],
+            sayHello(name) {
+                alert(`Hello ${name}`)
+            }
+        }
+        // 1- Check for a nested value
+        // This avoids "Uncaught TypeError: Cannot read property 'name' of undefined",
+        // because it stops when it finds out greeks.minorGods is undefined
+        console.log(greeks.minorGods?.name)
+        
+        // 2- Check if variable is even there
+        console.log(greeksOtherVariable?.name)
+        
+        // 3- Check if method is there before calling it
+        // THis avoids "Uncaught TypeError: greeks.say is not a function"
+        greeks.sayHello?.();
+
+        // 4- Check if an array exists, before checking for an item,
+        // before accessing the property
+        console.log(greeks.gods?.[1]?.name)
+    </script>
+</body>
+</html>
