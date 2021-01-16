@@ -124,7 +124,8 @@ workflows:
     jobs:
       - build
       - linting:
-          requires: build
+          requires: 
+            - build
           filters:
             branches:
               only:
