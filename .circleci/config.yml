@@ -24,7 +24,7 @@ aliases:
   - &install-dependencies
     run:
       name: Install dependencies
-      command: npm install
+      command: npm install --production
   - &save-cache
     save_cache:
       paths:
@@ -42,7 +42,7 @@ aliases:
     run:
       name: Build Project
       command: |
-        npm install
+        npm install --production
         npm run build
         cd build
         zip ../build.zip -r * .[^.]*
