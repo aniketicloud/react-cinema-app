@@ -64,9 +64,6 @@ jobs:
       - checkout
       - *show-current-branch-name
       - *restore-cache
-      - run:
-          name: Run Linting
-          command: npm run lint
 
   prettier:
     executor: app-executor
@@ -74,9 +71,6 @@ jobs:
       - checkout
       - *show-current-branch-name
       - *restore-cache
-      - run:
-          name: Run Prettier
-          command: npm run prettier:check
 
   deploy-to-heroku:
     executor: app-executor
